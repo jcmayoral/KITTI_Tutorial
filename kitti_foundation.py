@@ -4,6 +4,9 @@ github.com/windowsub0406
 """
 import numpy as np
 import glob
+import sys
+print (sys.path)
+sys.path.remove("/opt/ros/kinetic/lib/python2.7/dist-packages")
 import cv2
 from src import parseTrackletXML as pt_XML
 
@@ -613,7 +616,7 @@ class Kitti_util(Kitti):
 
     def __del__(self):
         pass
- 
+
 def print_projection_cv2(points, color, image):
     """ project converted velodyne points into camera image """
     hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
